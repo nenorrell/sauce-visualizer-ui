@@ -1,0 +1,25 @@
+$dark-text: #333333;
+$light-text: #FEFEFF;
+
+$theme-light-colors: (
+    light-hover-modifier: 5%,
+    light-primary: #ffffff,
+    light-primary-text: $dark-text,
+    light-secondary: #7289da,
+    light-secondary-text: $light-text,
+    light-accent: #F4F4F9,
+    light-accent-text: $dark-text,
+    light-accent-2: #E5E5F1,
+    light-accent-2-text: $dark-text,
+    light-success: #61E786,
+    light-success-text: $light-text,
+    light-danger: #E56B6F,
+    light-danger-text: $light-text,
+    light-info: #007acc,
+    light-info-text: $light-text,
+    light-warning: #FF9B42,
+    light-warning-text: $light-text,
+    light-light-text: $light-text,
+    light-dark-text: $light-text,
+    light-text: $dark-text,
+);

@@ -36,7 +36,7 @@ analyze-bundle:
 	./node_modules/.bin/webpack-bundle-analyzer ./ui/stats.json ./ui -h 0.0.0.0
 
 package:
-	./bin/package.sh
+	bin/package.sh
 
 publish-ci: install
 	docker run -i --rm -p "9198:1337" \

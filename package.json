@@ -1,6 +1,6 @@
 {
-  "name": "@apollo-api/visualizer",
-  "version": "2.0.0",
+  "name": "@apollo-api/visualizer-ui",
+  "version": "1.0.0",
   "keywords": [
     "Apollo",
     "Apollo API"
@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/apollo-api/visualizer.git"
+    "url": "git+https://gitlab.com/apollo-api/visualizer-ui.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/apollo-api/visualizer/-/issues"
+    "url": "https://gitlab.com/apollo-api/visualizer-ui/-/issues"
   },
-  "homepage": "https://gitlab.com/apollo-api/visualizer",
+  "homepage": "https://gitlab.com/apollo-api/visualizer-ui",
   "description": "A Swagger UI esque visualizer for Apollo API",
 
   "dependencies": {

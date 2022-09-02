@@ -1,7 +1,9 @@
 import React from "react";
 import { FormattedRoute, FormattedRouteParam } from "@apollo-api/core";
 import { Table } from "../Generic/Table/Table";
-import { LightAsync as SyntaxHighlighter } from "react-syntax-highlighter";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import json from "react-syntax-highlighter/dist/esm/languages/hljs/json";
+SyntaxHighlighter.registerLanguage("json", json);
 import "./RouteDetails.scss";
 
 interface IRouteDetails {

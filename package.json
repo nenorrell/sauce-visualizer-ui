@@ -1,6 +1,6 @@
 {
   "name": "@apollo-api/visualizer-ui",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "keywords": [
     "Apollo",
     "Apollo API"
@@ -21,10 +21,8 @@
   },
   "homepage": "https://gitlab.com/apollo-api/visualizer-ui",
   "description": "A Swagger UI esque visualizer for Apollo API",
-
   "dependencies": {
-    "express": "^4.18.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2"
+    "express": "^4.18.1"
   },
   "scripts": {
     "start": "FAST_REFRESH=false react-scripts start",
@@ -53,29 +51,29 @@
   },
   "devDependencies": {
     "@apollo-api/core": "^2.4.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/express": "^4.17.13",
-    "@types/jest": "^27.5.0",
-    "@types/node": "^16.11.33",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.3",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.56",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
     "@types/react-syntax-highlighter": "^15.5.5",
     "@types/uuid": "^8.3.4",
-    "eslint-config-google": "^0.14.0",
-    "@fortawesome/fontawesome-svg-core": "^6.1.2",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "daisyui": "^2.24.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "eslint-config-google": "^0.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "sass": "^1.51.0",
-    "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4",
+    "sass": "^1.54.8",
     "source-map-explorer": "^2.5.2",
-    "typescript": "^4.6.4"
+    "typescript": "^4.8.2",
+    "uuid": "^8.3.2",
+    "web-vitals": "^2.1.4"
   }
 }

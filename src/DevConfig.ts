@@ -19,6 +19,8 @@ export const devConfig = async () :Promise<VisualizerConfig> => {
         apiHealthcheckPath: process.env.REACT_APP_DOCS_HEALTHCHECK_ENDPOINT,
         defaultTheme: "dark",
         brandIcon: "bullseye",
-        brandImageUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg"
+        brandImageUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg",
+        welcomeMessage: `In order to get started using our API, please see the Authentication section. 
+        In it, you will find the necessary information for generating a token to consume authenticated routes.`
     };
 };

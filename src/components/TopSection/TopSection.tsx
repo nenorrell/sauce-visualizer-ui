@@ -48,15 +48,15 @@ export const TopSection = () => {
                 </div>
             </div>
 
-            <div className="hero min-h-[25vh] bg-base-300 mb-20">
+            <div className="hero min-h-[33vh] bg-base-300 mb-20">
                 <div className="hero-content">
                     <div className="max-w">
                         <h1 className="text-5xl font-bold">Welcome to the {config.appName || "API"} documentation</h1>
-                        {config.welcomeMessage ? <p className="text-xl mt-2">{config.welcomeMessage}</p> : null}
+                        {config.welcomeMessage ? <p className="text-xl mt-5">{config.welcomeMessage}</p> : null}
                         {
                             config.apiBaseUrl && config.apiHealthcheckPath ? (
                                 <>
-                                    <div className="md:w-fit sm:w-full sm:text-center mt-3 p-3 bg-base-100 rounded-md">
+                                    <div className="md:w-fit sm:w-full sm:text-center mt-5 p-3 bg-base-100 rounded-md">
                                         <h2 className="text-3xl inline-block">API Healthcheck:</h2>
                                         <div className={`p-1 ml-2 mr-1 inline-block rounded-full w-5 h-5 ${isHealthy ? "bg-success" : "bg-error"}`}></div>
                                         <h2 className={`text-3xl inline-block ${isHealthy ? "text-success" : "text-error"}`}>

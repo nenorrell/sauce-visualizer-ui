@@ -11,12 +11,12 @@ services:
     environment:
       FAST_REFRESH: "true"
       WDS_SOCKET_PORT: 3002
-      # CHOKIDAR_USEPOLLING: "true"
+      REACT_APP_BASE_URL: "http://localhost:3035"
+      REACT_APP_DOCS_ENDPOINT: "/api/docs"
+      REACT_APP_DOCS_HEALTHCHECK_ENDPOINT: "/healthcheck"
     ports:
       - "3001:3000"
       - "3002:3000"
     expose:
       - "3001"
     command: "npm start"
-    # stdin_open: true
-    # tty: true

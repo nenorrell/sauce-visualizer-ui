@@ -1,0 +1,13 @@
+.language-json{
+    .hljs-attr{
+    }
+    .hljs-string{
+        color: hsl(var(--in));
+    }
+    .hljs-number{
+        color: hsl(var(--wa));
+    }
+    .hljs-literal{
+        color: hsl(var(--er));
+    }
+}

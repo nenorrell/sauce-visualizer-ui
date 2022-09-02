@@ -1,46 +1,78 @@
+A Swagger UI esque visualizer for [Apollo API](https://github.com/nenorrell/apollo)
+
+
+# Usage
+Consuming in Apollo API would look similar to: 
+
+```javascript
+    import { visualizerUI, setupVisualizerUI } from "@apollo-api/visualizer-ui";
+
+    const visualizerConfig = {
+        appRoutes: [], // Apollo API formatted routes
+        appName: "Visualizer",
+        apiBaseUrl: process.env.REACT_APP_BASE_URL,
+        apiHealthcheckPath: process.env.REACT_APP_DOCS_HEALTHCHECK_ENDPOINT,
+        defaultTheme: "dark",
+        brandIcon: "bullseye",
+        brandImageUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg"
+    };
+
+    setupVisualizerUI(this.app);
+    this.app.get("/docs", async (req, res, next)=>{
+        const appRoutes = await new Routes(apolloConfig).getFormattedRoutes(true);
+        const tpl = await visualizerUI(visualizerConfig);
+        res.send(tpl);
+    });
+```
+
+
+
+# Options
+
+## Visualizer config
+
+### Example 
+```javascript
+     import { VisualizerConfig } from "./@types/VisualizerConfig";
+
+    const visualizerConfig = {
+        appRoutes: [],
+        appName: "Visualizer",
+        apiBaseUrl: process.env.REACT_APP_BASE_URL,
+        apiHealthcheckPath: process.env.REACT_APP_DOCS_HEALTHCHECK_ENDPOINT,
+        defaultTheme: "dark",
+        brandIcon: "bullseye",
+        brandImageUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg"
+    };
+```
+
+| Config Property | Description |
+| ------ | ------ |
+| appRoutes | An Array of formatted Apollo API route objects. See  [Apollo API](https://github.com/nenorrell/apollo) for details on formatted routes|
+| appName | The App name that will be displayed in the docs UI |
+| apiBaseUrl | The base URL for the API you're displaying docs for. Ex: `https://<some-apollo-api>.com` |
+| apiHealthcheckPath | If you have a healthcheck endpoint, you can supply it here and the UI will do a healthcheck for you. This value will be appended to the `apiBaseUrl`. Example: `/healthcheck` |
+| defaultTheme | The default theme to display |
+| brandIcon | You can supply a (free) font-awesome icon name here to display in the upper left corner. |
+| brandImageUrl | This is an alternative to the `brandIcon` value. You can supply your own image here to be displayed in the upper left corner |
+
+
+## Supported Route Icons
+| Icon | Requirements |
+| ------ | ------ |
+| Admin Shield | Expects a route to have a policy named `isAdmin` |
+| Authentication Lock | Expects a route to have a policy named `isAuthenticated` |
+
+
+# Development
+(_Requires Docker_)
+
+# Running
+Run `make run` and the app will come up on `http://localhost:3001`
+
+# Bundling
+Run `make package`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

@@ -1,0 +1,39 @@
+image: docker
+services:
+  - docker:dind
+
+stages:
+  # - test
+  - publish
+  
+# test:
+#   stage: test
+#   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+#   except:
+#     - schedules
+#   before_script:
+#     - apk add --no-cache curl
+#     - apk add --no-cache make
+  
+#   script:
+#     - make test
+#   only:
+#     refs:
+#       - merge_requests
+#       - master
+  
+publish:
+  stage: publish
+  # needs: ["test"]
+  except:
+    - schedules
+  before_script:
+    - apk add --no-cache curl
+    - apk add --no-cache make
+
+  script:
+    - make publish-ci NPM_TOKEN=$NPM_TOKEN
+
+  only:
+    refs:
+      - master

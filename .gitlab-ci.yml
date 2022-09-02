@@ -14,6 +14,7 @@ publish:
     - apk add --no-cache make
 
   script:
+    - make package
     - make publish-ci NPM_TOKEN=$NPM_TOKEN
 
   only:

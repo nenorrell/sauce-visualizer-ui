@@ -41,8 +41,7 @@
     "build-ts": "tsc --project ./generator/tsconfig.json",
     "build": "react-scripts build && mv build/static/js/main*.js build/static/js/main.min.js && mv build/static/css/main*.css build/static/css/main.min.css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "make package"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

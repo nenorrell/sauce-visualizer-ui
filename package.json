@@ -1,6 +1,6 @@
 {
   "name": "@apollo-api/visualizer-ui",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "keywords": [
     "Apollo",
     "Apollo API"
@@ -22,7 +22,9 @@
   "homepage": "https://gitlab.com/apollo-api/visualizer-ui",
   "description": "A Swagger UI esque visualizer for Apollo API",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0"
   },
   "scripts": {
     "start": "FAST_REFRESH=false react-scripts start",
@@ -51,8 +53,6 @@
   },
   "devDependencies": {
     "@apollo-api/core": "^2.4.0",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

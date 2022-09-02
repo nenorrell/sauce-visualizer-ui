@@ -3,14 +3,14 @@ NODE=16
 network:
 	./network.sh
 
-compile:
+compile: install
 	docker run --user node -i --rm --name compile-visualizer \
 	-e NODE_ENV=production \
 	-e PUBLIC_URL="/visualizer-ui-static" \
 	-v `pwd`:/usr/src/app \
 	-w /usr/src/app node:${NODE} npm run-script build
 
-compile-generator:
+compile-generator: install
 	docker run --user node -i --rm --name compile-visualizer -e NODE_ENV=production \
 	-v `pwd`:/usr/src/app -w /usr/src/app node:${NODE} npm run-script build-ts
 

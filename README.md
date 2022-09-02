@@ -7,21 +7,21 @@ Consuming in Apollo API would look similar to:
 ```javascript
     import { visualizerUI, setupVisualizerUI } from "@apollo-api/visualizer-ui";
 
-    const visualizerConfig = {
-        appRoutes: [], // Apollo API formatted routes
-        appName: "Visualizer",
-        apiBaseUrl: process.env.REACT_APP_BASE_URL,
-        apiHealthcheckPath: process.env.REACT_APP_DOCS_HEALTHCHECK_ENDPOINT,
-        defaultTheme: "dark",
-        brandIcon: "bullseye",
-        brandImageUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg"
-    };
-
     setupVisualizerUI(this.app);
     this.app.get("/docs", async (req, res, next)=>{
-        const appRoutes = await new Routes(apolloConfig).getFormattedRoutes(true);
-        const tpl = await visualizerUI(visualizerConfig);
-        res.send(tpl);
+        const appRoutes = await new Routes(apolloConfig)
+        .getFormattedRoutes(true);
+
+        const ui = await visualizerUI({
+            appRoutes,
+            appName: "Visualizer",
+            apiBaseUrl: process.env.REACT_APP_BASE_URL,
+            apiHealthcheckPath: process.env.REACT_APP_DOCS_HEALTHCHECK_ENDPOINT,
+            defaultTheme: "dark",
+            brandIcon: "bullseye",
+            brandImageUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg"
+        });
+        res.send(ui);
     });
 ```
 

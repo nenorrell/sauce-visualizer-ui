@@ -23,7 +23,8 @@
   "description": "A Swagger UI esque visualizer for Apollo API",
 
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2"
   },
   "scripts": {
     "start": "FAST_REFRESH=false react-scripts start",

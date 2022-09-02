@@ -12,7 +12,7 @@ const fetchDocs = async () => {
 
 export const devConfig = async () :Promise<VisualizerConfig> => {
     return {
-        appRoutes: [(await fetchDocs()).response],
+        appRoutes: (await fetchDocs()).response,
         appName: "Visualizer",
         apiBaseUrl: process.env.REACT_APP_BASE_URL,
         // apiDocsPath: process.env.REACT_APP_DOCS_ENDPOINT,

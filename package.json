@@ -1,6 +1,6 @@
 {
   "name": "@apollo-api/visualizer-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "Apollo",
     "Apollo API"
@@ -23,18 +23,7 @@
   "description": "A Swagger UI esque visualizer for Apollo API",
 
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.2",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "daisyui": "^2.24.0",
-    "express": "^4.18.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "^5.0.1",
-    "react-syntax-highlighter": "^15.5.0",
-    "sass": "^1.51.0",
-    "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
+    "express": "^4.18.1"
   },
   "scripts": {
     "start": "FAST_REFRESH=false react-scripts start",
@@ -74,6 +63,17 @@
     "@types/react-syntax-highlighter": "^15.5.5",
     "@types/uuid": "^8.3.4",
     "eslint-config-google": "^0.14.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "daisyui": "^2.24.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "^5.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.51.0",
+    "uuid": "^8.3.2",
+    "web-vitals": "^2.1.4",
     "source-map-explorer": "^2.5.2",
     "typescript": "^4.6.4"
   }

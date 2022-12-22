@@ -1,6 +1,6 @@
 {
   "name": "@apollo-api/visualizer-ui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "keywords": [
     "Apollo",
     "Apollo API"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://gitlab.com/apollo-api/visualizer-ui",
   "description": "A Swagger UI esque visualizer for Apollo API",
-  "peerDependencies":{
+  "peerDependencies": {
     "express": "^4.18.1"
   },
   "dependencies": {

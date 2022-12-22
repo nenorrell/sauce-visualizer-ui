@@ -55,7 +55,12 @@ export const Route = ({route}:IRoute) => {
             <div className="mx-5 mt-5 bg-base-100 rounded-md text-base-content"
                 id={routeLink}
                 onClick={e=>{
-                    history.pushState(null, "", `#${routeLink}`);
+                    if(location.hash == `#${routeLink}`) {
+                        history.pushState(null, "", `${location.pathname}${location.search}`);
+                    }
+                    else{
+                        history.pushState(null, "", `#${routeLink}`);
+                    }
                 }}
             >
                 <Collapse

@@ -16,6 +16,7 @@ export const RouteGroup = ({group}:IRouteGroup) => {
                     headerContent={group.tag || ""}
                     headerClasses={["text-xl", "font-medium", "bg-primary", "text-primary-content"]}
                     leftIcon={faLayerGroup}
+                    rootCollapse={true}
                 >
                     <div className="h-100%">
                         <RouteList routes={group.routes} />

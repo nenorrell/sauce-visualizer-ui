@@ -1,48 +1,49 @@
-import React, { PropsWithChildren, ReactNode, RefObject, useEffect, useRef, useState } from "react";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { faChevronDown, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 
 const toggleExpand = (ref :RefObject<HTMLDivElement>, isExpanded :boolean, rootCollapse ?:boolean)=>{
     if(ref.current?.clientHeight && !isExpanded) {
-        ref.current.style.height = "0";
+        ref.current.style.height = "0px";
     }
     else if(ref.current && isExpanded) {
         if(!rootCollapse) {
-            ref.current.style.height = "0";
+            ref.current.style.height = "0px";
             ref.current.style.height = `${ref.current.scrollHeight}px`;
         }
     }
 };
 
 interface ICollapse {
+    className ?:string;
     defaultExpand ?:boolean
-    headerContent :string | ReactNode
-    headerClasses ?:string[]
+    headerContent :string | React.ReactNode
+    headerClasses ?:string
     leftIcon ?:IconDefinition
+    leftIconClasses ?:string
+    rightIconClasses ?:string
     rootCollapse ?:boolean
 }
-export const Collapse = (props :PropsWithChildren<ICollapse>) => {
+export const Collapse = (props :React.PropsWithChildren<ICollapse>) => {
     const expandableContent = useRef<HTMLDivElement>(null);
     const [isExpanded, setIsExpanded] = useState<boolean>(props.defaultExpand || false);
-
     useEffect(()=>{
         toggleExpand(expandableContent, isExpanded, props.rootCollapse);
-    }, [isExpanded]);
+    }, [isExpanded]); // eslint-disable-line
 
     return (
-        <div className="w-100">
-            <div className={`collapse-title cursor-pointer flex items-center justify-center
-                ${props.headerClasses?.join(" ") || ""}`
-            }
-            onClick={()=> setIsExpanded(!isExpanded) }>
+        <div tabIndex={0} className={`w-100 collapse ${props.className || ""}`}>
+            <div className={`collapse-title cursor-pointer flex items-center justify-center px-4 ${props.headerClasses || ""}`}
+                onClick={()=> setIsExpanded(!isExpanded) }>
                 {
-                    props.leftIcon ? <FontAwesomeIcon icon={props.leftIcon} className="mr-2" /> : null
+                    props.leftIcon ?
+                        <FontAwesomeIcon icon={props.leftIcon} className={props.leftIconClasses || "mr-2"} /> :
+                        null
                 }
                 <div className="w-full">{props.headerContent}</div>
-                <p className={`items-end transition ease-in-out ${isExpanded ? "" : "-rotate-90"}`}>
-                    <FontAwesomeIcon icon={faChevronDown}/>
-                </p>
+                <div className={`items-end transition ease-in-out ${isExpanded ? "" : "-rotate-90"}`}>
+                    <FontAwesomeIcon icon={faChevronDown} className={props.rightIconClasses}/>
+                </div>
             </div>
 
             <div

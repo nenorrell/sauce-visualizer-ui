@@ -1,8 +1,5 @@
 NODE=16
 
-network:
-	./network.sh
-
 compile: install
 	docker run --user node -i --rm --name compile-visualizer \
 	-e NODE_ENV=production \
@@ -34,6 +31,24 @@ analyze-bundle:
 	--name bundle-analyzer -v `pwd`:/usr/src/app \
 	-w /usr/src/app node:${NODE} \
 	./node_modules/.bin/webpack-bundle-analyzer ./ui/stats.json ./ui -h 0.0.0.0
+
+run-tests: install unit-tests run-linting
+run-tests-fast: unit-tests run-linting
+
+unit-tests:
+	docker run -i --rm \
+	--name visualizer-ui-test \
+	-p "9199:9200" \
+	-v `pwd`:/usr/src/app \
+	-w /usr/src/app node:${NODE} \
+	npm test $(TEST)
+
+run-linting:
+	docker run -i --rm \
+	--name visualizer-ui-linting \
+	-v `pwd`:/usr/src/app \
+	-w /usr/src/app node:${NODE} \
+	npm run lint
 
 package:
 	/bin/sh ./bin/package.sh

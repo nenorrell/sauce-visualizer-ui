@@ -34,7 +34,7 @@ export const ThemeSelector = ()=>{
     };
 
     return (
-        <Select variant="accent" className="w-full max-w-xs" defaultValue={currentTheme} onChange={handleThemeChange}>
+        <Select variant="accent" className="w-full max-w-xs" value={currentTheme} onChange={handleThemeChange}>
             {
                 supportedThemes.map(theme => (
                     <option key={uuidv4()} value={theme}>{theme}</option>

@@ -1,6 +1,6 @@
 {
   "name": "@sauce-api/visualizer-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "Sauce",
     "Sauce API"
@@ -27,7 +27,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "daisy-ui-react-components": "^0.0.27"
+    "daisy-ui-react-components": "^0.0.28"
   },
   "scripts": {
     "start": "FAST_REFRESH=false react-scripts start",

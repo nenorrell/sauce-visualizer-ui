@@ -1,15 +1,15 @@
-A Swagger UI esque visualizer for [Apollo API](https://github.com/nenorrell/apollo)
+A Swagger UI esque visualizer for [Sauce API](https://github.com/nenorrell/sauce)
 
 
 # Usage
-Consuming in Apollo API would look similar to: 
+Consuming in Sauce API would look similar to: 
 
 ```javascript
-    import { visualizerUI, setupVisualizerUI } from "@apollo-api/visualizer-ui";
+    import { visualizerUI, setupVisualizerUI } from "@sauce-api/visualizer-ui";
 
     setupVisualizerUI(this.app);
     this.app.get("/docs", async (req, res, next)=>{
-        const appRoutes = await new Routes(apolloConfig)
+        const appRoutes = await new Routes(sauceConfig)
         .getFormattedRoutes(true);
 
         const ui = await visualizerUI({
@@ -48,9 +48,9 @@ Consuming in Apollo API would look similar to:
 
 | Config Property | Description |
 | ------ | ------ |
-| appRoutes | An Array of formatted Apollo API route objects. See  [Apollo API](https://github.com/nenorrell/apollo) for details on formatted routes|
+| appRoutes | An Array of formatted Sauce API route objects. See  [Sauce API](https://github.com/nenorrell/sauce) for details on formatted routes|
 | appName | The App name that will be displayed in the docs UI |
-| apiBaseUrl | The base URL for the API you're displaying docs for. Ex: `https://<some-apollo-api>.com` |
+| apiBaseUrl | The base URL for the API you're displaying docs for. Ex: `https://<some-sauce-api>.com` |
 | apiHealthcheckPath | If you have a healthcheck endpoint, you can supply it here and the UI will do a healthcheck for you. This value will be appended to the `apiBaseUrl`. Example: `/healthcheck` |
 | defaultTheme | The default theme to display |
 | brandIcon | You can supply a (free) font-awesome icon name here to display in the upper left corner. |

@@ -1,11 +1,11 @@
 import React from "react";
-import { FormattedRoute, FormattedRouteParam } from "@apollo-api/core";
+import { FormattedRoute, FormattedRouteParam } from "@sauce-api/core";
 import { Table } from "../Generic/Table/Table";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import json from "react-syntax-highlighter/dist/esm/languages/hljs/json";
 SyntaxHighlighter.registerLanguage("json", json);
 import "./RouteDetails.scss";
-import { ObjectOfAnything } from "@apollo-api/core/dist/resources/Common";
+import { ObjectOfAnything } from "@sauce-api/core/dist/resources/Common";
 
 interface IRouteDetails {
     route :FormattedRoute

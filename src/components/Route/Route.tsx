@@ -1,10 +1,11 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { FormattedRoute } from "@apollo-api/core";
-import { Collapse } from "../Generic/Collapse/Collapse";
+import { FormattedRoute } from "@sauce-api/core";
+// import { Collapse } from "../Generic/Collapse/Collapse";
 import { faSignsPost } from "@fortawesome/free-solid-svg-icons";
 import { RouteDetails } from "../RouteDetails/RouteDetails";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Collapse, CollapseBody, CollapseTitle } from "daisy-ui-react-components";
 
 interface IRoute {
     route :FormattedRoute
@@ -63,7 +64,29 @@ export const Route = ({route}:IRoute) => {
                     }
                 }}
             >
-                <Collapse
+                <Collapse defaultExpand={defaultExpand}>
+                    <CollapseTitle>
+                        <FontAwesomeIcon className="min-w-[18px] mr-2" icon={faSignsPost} />
+                        <div className="text-lg w-full flex items-center">
+                            <div className={`mx-2 p-1 px-2 w-20 text-center rounded-md inline-block ${routeMethodClasses.join(" ")}`}>
+                                {route.method.toUpperCase()}
+                            </div>
+                            <div className="rounded-md inline-block bg-base-300 text-base-content p-1 px-2 w-100">{formattedPath}</div>
+                            <div className="flex-1 text-right mr-4">
+                                {
+                                    isAdminRoute ? <FontAwesomeIcon icon={"shield"} className="mx-1" /> :
+                                        isAuthRequired ? <FontAwesomeIcon icon={"lock"} className="mx-1" /> :
+                                            null
+                                }
+                            </div>
+                        </div>
+                    </CollapseTitle>
+                    <CollapseBody>
+                        <RouteDetails route={route} />
+                    </CollapseBody>
+                </Collapse>
+
+                {/* <Collapse
                     leftIcon={faSignsPost}
                     headerContent={
                         <div className="text-lg flex items-center">
@@ -83,7 +106,7 @@ export const Route = ({route}:IRoute) => {
                     defaultExpand={defaultExpand}
                 >
                     <RouteDetails route={route} />
-                </Collapse>
+                </Collapse> */}
             </div>
         </div>
     );

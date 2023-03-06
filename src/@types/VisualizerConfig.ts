@@ -1,4 +1,4 @@
-import { FormattedRoute, RouteGrouping } from "@apollo-api/core";
+import { FormattedRoute, RouteGrouping } from "@sauce-api/core";
 import { IconName } from "@fortawesome/free-solid-svg-icons";
 
 export interface VisualizerConfig {

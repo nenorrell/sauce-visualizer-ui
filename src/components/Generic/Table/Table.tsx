@@ -1,4 +1,4 @@
-import { FormattedRouteParam } from "@apollo-api/core";
+import { FormattedRouteParam } from "@sauce-api/core";
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 

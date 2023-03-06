@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TopSection } from "../TopSection/TopSection";
-import { FormattedRoute, RouteGrouping } from "@apollo-api/core";
+import { FormattedRoute, RouteGrouping } from "@sauce-api/core";
 import { VisualizerConfig } from "../../@types/VisualizerConfig";
 import { ConfigContext } from "../../modules/ConfigContext";
 import { RouteGroup } from "../RouteGroup/RouteGroup";

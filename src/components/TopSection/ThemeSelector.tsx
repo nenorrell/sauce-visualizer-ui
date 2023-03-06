@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { VisualizerConfig } from "../../@types/VisualizerConfig";
 import { ConfigContext } from "../../modules/ConfigContext";
 import { v4 as uuidv4 } from "uuid";
+import { Select } from "daisy-ui-react-components";
 
 export const ThemeSelector = ()=>{
     const config = useContext<VisualizerConfig>(ConfigContext);
@@ -33,12 +34,12 @@ export const ThemeSelector = ()=>{
     };
 
     return (
-        <select className="select select-accent text-accent w-full max-w-xs" value={currentTheme} onChange={handleThemeChange}>
+        <Select variant="accent" className="w-full max-w-xs" defaultValue={currentTheme} onChange={handleThemeChange}>
             {
                 supportedThemes.map(theme => (
                     <option key={uuidv4()} value={theme}>{theme}</option>
                 ))
             }
-        </select>
+        </Select>
     );
 };

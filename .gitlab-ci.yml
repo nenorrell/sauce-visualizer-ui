@@ -15,7 +15,7 @@ publish:
 
   script:
     - make package
-    - make publish-ci NPM_TOKEN=$NPM_TOKEN
+    # - make publish-ci NPM_TOKEN=$NPM_TOKEN
 
   only:
     refs:
